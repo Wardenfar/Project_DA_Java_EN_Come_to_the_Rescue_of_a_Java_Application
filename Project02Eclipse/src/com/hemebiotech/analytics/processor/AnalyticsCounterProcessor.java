@@ -36,12 +36,12 @@ public class AnalyticsCounterProcessor implements ISymptomProcessor {
     public void processSymptoms(List<String> symptoms) {
         for (String symptom : symptoms) { // Foreach symptoms
             // If it's new symptom then create new counter
-            if (!getCounters().containsKey(symptom)) {
-                getCounters().put(symptom, 0);
+            if (!counters.containsKey(symptom)) {
+                counters.put(symptom, 0);
             }
             // get previous count and add 1
-            int previousCount = getCounters().get(symptom);
-            getCounters().put(symptom, previousCount + 1);
+            int previousCount = counters.get(symptom);
+            counters.put(symptom, previousCount + 1);
         }
     }
 
